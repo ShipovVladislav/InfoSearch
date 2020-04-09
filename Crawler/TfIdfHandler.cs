@@ -15,7 +15,7 @@ namespace Crawler
         public List<FileInfo> FileInfos = new List<FileInfo>();
         public string path;
         public List<WordFreqInfo> TftdfInfo;
-        public List<List<TFIDFFileInfoDto>> MainVector = new List<List<TFIDFFileInfoDto>>();
+        public List<TFIDFFileInfoDto> MainVector = new List<TFIDFFileInfoDto>();
         
         public TfIdfHandler(string path)
         {
@@ -62,7 +62,7 @@ namespace Crawler
                         return wordsCount / file.wordsCount;
                     })
                 }).ToList();
-            for (var i = 0; i < 200; i++)
+            for (var i = 1; i < 200; i++)
             {
                 var vector = TftdfInfo
                     .Select(x => new TFIDFFileInfoDto
@@ -72,7 +72,7 @@ namespace Crawler
                         TFIDF = x.TFIDF.ToList().Where(y => y.Key == i).Select(o => o.Value).FirstOrDefault()
                     }).ToList();
                 
-                MainVector.Add(vector);
+                MainVector.AddRange(vector);
             }
         }
 
@@ -107,45 +107,56 @@ namespace Crawler
 
         public void Search(string[] words)
         {
-            var queryVector = new List<List<TFIDFFileInfoDto>>(MainVector);
-            
-            foreach (var temp in queryVector.SelectMany(item => item.Where(temp => words.Contains(temp.Word) && temp.TFIDF > 0)))
-            {
-                temp.TFIDF = 1 / (double) queryVector.Count;
-            }
-            
-            foreach (var temp in queryVector.SelectMany(item => item.Where(temp => !words.Contains(temp.Word))))
-            {
-                temp.TFIDF = 0;
-            }
-            
-            var result = new List<TFIDFFileInfoDto>();
+            var tfidfinfo = MainVector;
 
-            for (var i = 0; i < MainVector.Count; i++)
-            {
-                for (var j = 0; j < MainVector[i].Count; j++)
-                {
-                    var temp = MainVector[i][j].Word == queryVector[i][j].Word ? MainVector[i][j].TFIDF * queryVector[i][j].TFIDF : 0;
-                    result.Add(new TFIDFFileInfoDto
-                    {
-                        DocNumber = MainVector[i][j].DocNumber,
-                        Word = MainVector[i][j].Word,
-                        TFIDF = temp
-                    });
-                }
-            }
-
-            result = result.OrderByDescending(x => x.TFIDF).GroupBy(p => p.DocNumber)
-                .Select(g => g.First())
-                .Where(x => x.TFIDF > 0)
+            var searchVector = GetVector(tfidfinfo, words);
+            var result = tfidfinfo
+                .GroupBy(p => p.DocNumber)
+                .Select(g 
+                    => new
+                        {
+                            value = Cosinus(searchVector, GetVector(g.Select(v => v).ToArray(), words)),
+                            number = g.Key
+                        })
+                .Where(rd => rd.value > 0)
+                .OrderByDescending(rd => rd.value)
                 .Take(10)
-                .ToList();
+                .Select(x => x.number)
+                .ToArray();
+            Console.WriteLine(string.Join(" ", result));
+            
 
-            foreach (var item in result)
-            {
-                Console.Write(item.DocNumber + " ");
-            }
+            
         }
+        private double[] GetVector(IEnumerable<TFIDFFileInfoDto> tfIdfParams, string[] Words)
+            => Words.Select(w => tfIdfParams
+                                     .FirstOrDefault(p => p.Word == w)?.TFIDF ?? 0)
+                .ToArray();
+        private double Cosinus(double[] v1, double[] v2)
+        {
+            var lengthV1 = GetVectorLength(v1);
+            
+            var lengthV2 = GetVectorLength(v2);
+
+            if (lengthV1 == 0 || lengthV2 == 0) return 0;
+
+            var multipleVector = GetMultipleVector(v1, v2);
+
+            return multipleVector / (lengthV1 * lengthV2);
+        }
+
+        private double GetVectorLength(IEnumerable<double> vector)
+        {
+            double sum = 0;
+            foreach (var item in vector)
+            {
+                sum += item * item;
+            }
+
+            return Math.Sqrt(sum);
+        }
+        private double GetMultipleVector(double[] v1, double[] v2)
+            => v1.Select((t, i) => t * v2[i]).Sum();
         public void WriteTfIdf(IEnumerable<WordFreqInfo> tfIdfInfo)
         {
             File.Create(path).Dispose();
