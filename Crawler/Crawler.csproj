@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>netcoreapp2.1</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="ChilkatDnCore" Version="9.5.0.82" />
+      <PackageReference Include="CsvHelper" Version="15.0.4" />
+      <PackageReference Include="GemBox.Spreadsheet" Version="45.0.1131" />
+      <PackageReference Include="LemmaGenerator" Version="1.1.0" />
+      <PackageReference Include="LemmaSharp-std" Version="1.0.1" />
+      <PackageReference Include="ReadSharp" Version="6.3.0" />
+    </ItemGroup>
+
+</Project>

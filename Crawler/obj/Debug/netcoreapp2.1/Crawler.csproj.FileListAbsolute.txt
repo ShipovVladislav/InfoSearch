@@ -1,0 +1,23 @@
+C:\Users\Shipo\RiderProjects\Crawler\Crawler\bin\Debug\netcoreapp2.1\Crawler.deps.json
+C:\Users\Shipo\RiderProjects\Crawler\Crawler\bin\Debug\netcoreapp2.1\Crawler.runtimeconfig.json
+C:\Users\Shipo\RiderProjects\Crawler\Crawler\bin\Debug\netcoreapp2.1\Crawler.runtimeconfig.dev.json
+C:\Users\Shipo\RiderProjects\Crawler\Crawler\bin\Debug\netcoreapp2.1\Crawler.dll
+C:\Users\Shipo\RiderProjects\Crawler\Crawler\bin\Debug\netcoreapp2.1\Crawler.pdb
+C:\Users\Shipo\RiderProjects\Crawler\Crawler\obj\Debug\netcoreapp2.1\Crawler.csprojAssemblyReference.cache
+C:\Users\Shipo\RiderProjects\Crawler\Crawler\obj\Debug\netcoreapp2.1\Crawler.csproj.CoreCompileInputs.cache
+C:\Users\Shipo\RiderProjects\Crawler\Crawler\obj\Debug\netcoreapp2.1\Crawler.AssemblyInfoInputs.cache
+C:\Users\Shipo\RiderProjects\Crawler\Crawler\obj\Debug\netcoreapp2.1\Crawler.AssemblyInfo.cs
+C:\Users\Shipo\RiderProjects\Crawler\Crawler\obj\Debug\netcoreapp2.1\Crawler.dll
+C:\Users\Shipo\RiderProjects\Crawler\Crawler\obj\Debug\netcoreapp2.1\Crawler.pdb
+C:\Users\Shipo\Downloads\Telegram Desktop\Crawler\Crawler\Crawler\bin\Debug\netcoreapp2.1\Crawler.deps.json
+C:\Users\Shipo\Downloads\Telegram Desktop\Crawler\Crawler\Crawler\bin\Debug\netcoreapp2.1\Crawler.runtimeconfig.json
+C:\Users\Shipo\Downloads\Telegram Desktop\Crawler\Crawler\Crawler\bin\Debug\netcoreapp2.1\Crawler.runtimeconfig.dev.json
+C:\Users\Shipo\Downloads\Telegram Desktop\Crawler\Crawler\Crawler\bin\Debug\netcoreapp2.1\Crawler.dll
+C:\Users\Shipo\Downloads\Telegram Desktop\Crawler\Crawler\Crawler\bin\Debug\netcoreapp2.1\Crawler.pdb
+C:\Users\Shipo\Downloads\Telegram Desktop\Crawler\Crawler\Crawler\obj\Debug\netcoreapp2.1\Crawler.csprojAssemblyReference.cache
+C:\Users\Shipo\Downloads\Telegram Desktop\Crawler\Crawler\Crawler\obj\Debug\netcoreapp2.1\Crawler.csproj.CoreCompileInputs.cache
+C:\Users\Shipo\Downloads\Telegram Desktop\Crawler\Crawler\Crawler\obj\Debug\netcoreapp2.1\Crawler.AssemblyInfoInputs.cache
+C:\Users\Shipo\Downloads\Telegram Desktop\Crawler\Crawler\Crawler\obj\Debug\netcoreapp2.1\Crawler.AssemblyInfo.cs
+C:\Users\Shipo\Downloads\Telegram Desktop\Crawler\Crawler\Crawler\obj\Debug\netcoreapp2.1\Crawler.dll
+C:\Users\Shipo\Downloads\Telegram Desktop\Crawler\Crawler\Crawler\obj\Debug\netcoreapp2.1\Crawler.pdb
+C:\Users\Shipo\Downloads\Telegram Desktop\Crawler\Crawler\Crawler\obj\Debug\netcoreapp2.1\Crawler.genruntimeconfig.cache

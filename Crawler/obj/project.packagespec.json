@@ -1,0 +1,76 @@
+﻿{
+  "version": "1.0.0",
+  "restore": {
+    "projectUniqueName": "C:\\Users\\Shipo\\Downloads\\Telegram Desktop\\Crawler\\Crawler\\Crawler\\Crawler.csproj",
+    "projectName": "Crawler",
+    "projectPath": "C:\\Users\\Shipo\\Downloads\\Telegram Desktop\\Crawler\\Crawler\\Crawler\\Crawler.csproj",
+    "outputPath": "C:\\Users\\Shipo\\Downloads\\Telegram Desktop\\Crawler\\Crawler\\Crawler\\obj\\",
+    "projectStyle": "PackageReference",
+    "fallbackFolders": [
+      "C:\\Microsoft\\Xamarin\\NuGet"
+    ],
+    "originalTargetFrameworks": [
+      "netcoreapp2.1"
+    ],
+    "sources": {
+      "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+      "https://api.nuget.org/v3/index.json": {}
+    },
+    "frameworks": {
+      "netcoreapp2.1": {
+        "projectReferences": {}
+      }
+    },
+    "warningProperties": {
+      "warnAsError": [
+        "NU1605"
+      ]
+    }
+  },
+  "frameworks": {
+    "netcoreapp2.1": {
+      "dependencies": {
+        "ChilkatDnCore": {
+          "target": "Package",
+          "version": "[9.5.0.82, )"
+        },
+        "CsvHelper": {
+          "target": "Package",
+          "version": "[15.0.4, )"
+        },
+        "GemBox.Spreadsheet": {
+          "target": "Package",
+          "version": "[45.0.1131, )"
+        },
+        "LemmaGenerator": {
+          "target": "Package",
+          "version": "[1.1.0, )"
+        },
+        "LemmaSharp-std": {
+          "target": "Package",
+          "version": "[1.0.1, )"
+        },
+        "Microsoft.NETCore.App": {
+          "suppressParent": "All",
+          "target": "Package",
+          "version": "[2.1.0, )",
+          "autoReferenced": true
+        },
+        "ReadSharp": {
+          "target": "Package",
+          "version": "[6.3.0, )"
+        }
+      },
+      "imports": [
+        "net461",
+        "net462",
+        "net47",
+        "net471",
+        "net472",
+        "net48"
+      ],
+      "assetTargetFallback": true,
+      "warn": true
+    }
+  }
+}
